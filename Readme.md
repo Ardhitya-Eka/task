@@ -5,15 +5,15 @@ A simple command-line task manager written in Go.
 ## Installation
 
 ```bash
-git clone https://github.com/your-username/task-cli.git
-cd task-cli
-go build -o task-cli .
+git clone https://github.com/Ardhitya-Eka/task-tracker-cli.git
+cd task
+go build .
 ```
 
 ## Usage
 
 ```bash
-./task-cli <command> [arguments]
+./task <command> [arguments]
 ```
 
 ## Commands
@@ -31,16 +31,16 @@ go build -o task-cli .
 
 ```bash
 # Add a new task
-./task-cli add Buy groceries
+./task add Buy groceries
 
 # Update a task
-./task-cli update 1 Buy groceries and cook dinner
+./task update 1 Buy groceries and cook dinner
 
 # Delete a task
-./task-cli delete 1
+./task delete 1
 
 # Mark a task as in progress
-./task-cli in-progres 1
+./task in-progres 1
 
 # Mark a task as done
 ./task-cli done 1
@@ -61,7 +61,9 @@ go build -o task-cli .
 task-cli/
 ├── main.go         # Entry point
 ├── cli.go          # CLI command handler (RunCLI)
-├── data.go         # Data model and storage logic
+├── storage.go      # storage logic
+├── model.go        # model data
+├── service.go      # service logic 
 └── README.md
 ```
 
