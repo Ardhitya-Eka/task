@@ -23,12 +23,10 @@ go build .
 | `add` | `<description>` | Add a new task |
 | `update` | `<id> <description>` | Update the description of an existing task |
 | `delete` | `<id>` | Delete a task by ID |
-
 | `list` | Get all list |
 | `list-todo` | Get list todo|
 | `list-in-progress` | Get list in-progress |
 | `list-done` | Get all list done|
-
 | `in-progres` | `<id>` | Mark a task as **In Progress** |
 | `done` | `<id>` | Mark a task as **Done** |
 | `--help` | — | Show usage information |
@@ -50,6 +48,15 @@ go build .
 
 # Mark a task as done
 ./task-cli done 1
+
+# list a task
+./task list
+
+# list a task-in-progress
+./task list-in-progress
+
+# list a task-done
+./task list-done
 
 # Show help
 ./task-cli --help
