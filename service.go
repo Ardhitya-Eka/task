@@ -34,16 +34,32 @@ func add(description string) error {
 
 }
 
+func getData() ([]Todo, error) {
+	getData, err := loadTask()
+	if err != nil {
+		return nil, err
+	}
+	return getData, nil
+}
+
 // Get Data By Status TODO
 func getDataByStatus(status Status) ([]Todo, error) {
-	getData, _ := loadTask()
-	for i := range getData {
-		if getData[i].Status == status {
-			return getData, nil
+	getData, err := loadTask()
+	if err != nil {
+		return nil, err
+	}
+	var result []Todo
+	for _, data := range getData {
+		if data.Status == status {
+			result = append(result, data)
 		}
 	}
 
-	return nil, errors.New("Data with Status Todo Is Empty")
+	if len(result) == 0 {
+		return nil, fmt.Errorf("no data with status: %s", status)
+	}
+
+	return result, nil
 }
 
 // Find Data By ID

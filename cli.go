@@ -63,7 +63,52 @@ func RunCLI(data *Data, args []string) {
 
 		fmt.Println("Updating Task, ID :", id)
 
-	case "in-progres":
+	// GET DATA :
+	case "list":
+		data, err := getData()
+		if err != nil {
+			fmt.Println("Error : ", err)
+			return
+		}
+
+		for _, data := range data {
+			fmt.Println("id:", data.ID, "| description:", data.Description, "| status: ", data.Status, "| created_at:", data.CreatedAt, "| updated_at:", data.UpdateAt)
+		}
+
+	case "list-done":
+
+		data, err := getDataByStatus(StatusDone)
+		if err != nil {
+			fmt.Println("error : ", err)
+			return
+		}
+		for _, data := range data {
+			fmt.Println("id:", data.ID, "| description:", data.Description, "| status: ", data.Status, "| created_at:", data.CreatedAt, "| updated_at:", data.UpdateAt)
+		}
+	case "list-in-progress":
+
+		data, err := getDataByStatus(StatusInProgress)
+		if err != nil {
+			fmt.Println("error : ", err)
+			return
+		}
+		for _, data := range data {
+			fmt.Println("id:", data.ID, "| description:", data.Description, "| status: ", data.Status, "| created_at:", data.CreatedAt, "| updated_at:", data.UpdateAt)
+		}
+
+	case "list-todo":
+
+		data, err := getDataByStatus(StatusTodo)
+		if err != nil {
+			fmt.Println("error : ", err)
+			return
+		}
+		for _, data := range data {
+			fmt.Println("id:", data.ID, "| description:", data.Description, "| status: ", data.Status, "| created_at:", data.CreatedAt, "| updated_at:", data.UpdateAt)
+		}
+
+	// CHANGE STATUS :
+	case "in-progress":
 		id, _ := strconv.Atoi(args[2])
 		err := changeStatus(id, StatusInProgress)
 		if err != nil {
