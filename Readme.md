@@ -5,7 +5,7 @@ A simple command-line task manager chalange from https://roadmap.sh/projects/tas
 ## Installation
 
 ```bash
-git clone https://github.com/Ardhitya-Eka/task-tracker-cli.git
+git clone https://github.com/Ardhitya-Eka/task.git
 cd task
 go build .
 ```
