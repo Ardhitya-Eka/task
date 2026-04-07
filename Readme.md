@@ -47,7 +47,7 @@ go build .
 ./task in-progres 1
 
 # Mark a task as done
-./task-cli done 1
+./task done 1
 
 # list a task
 ./task list
@@ -59,7 +59,7 @@ go build .
 ./task list-done
 
 # Show help
-./task-cli --help
+./task --help
 ```
 
 ## Task Statuses
