@@ -1,7 +1,5 @@
 # Task CLI
 
-A simple command-line task manager chalange from https://roadmap.sh/projects/task-tracker
-
 ## Installation
 
 ```bash
